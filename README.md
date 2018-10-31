@@ -2,7 +2,7 @@
 
 A docker container for running a unifi controller begind a nginx reverse proxy.
 
-Thanks to user evertramos for providing the dockerized nginx proxy with letsencrypt
+Thanks to user evertramos for providing the dockerized nginx proxy with letsencrypt.
 
 # Prerequisites
 In order to use this compose file (docker-compose.yml) you must have:
