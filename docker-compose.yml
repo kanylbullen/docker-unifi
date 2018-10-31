@@ -1,0 +1,33 @@
+version: "2"
+
+services:
+  unifi:
+    image: jacobalberty/unifi
+    container_name: docker-unifi
+    restart: always
+    volumes:
+      - "/etc/localtime:/etc/localtime"
+      - "/your/app/folder/unifi:/unifi"
+      - "/your/app/folder/var/lib/unifi:/var/lib/unifi"
+      - "/your/app/folder/var/log/unifi:/var/log/unifi"
+      - "/your/app/folder/var/run/unifi:/var/run/unifi"
+      - "/your/app/folder/usr/lib/unifi/work:/usr/lib/unifi/work"
+    ports:
+      - "8843:8843"
+      - "8080:8080"
+      - "8081:8081"
+      - "3478:3478/udp"
+    environment:
+      - VIRTUAL_HOST=unifi.your.domain
+      - VIRTUAL_NETWORK=webproxy
+      - VIRTUAL_PORT=8443
+      - VIRTUAL_PROTO=https
+      - LETSENCRYPT_HOST=unifi.your.domain
+      - LETSENCRYPT_EMAIL=your@email.adress
+    networks:
+      - webproxy
+
+networks:
+  webproxy:
+    external:
+      name: webproxy
