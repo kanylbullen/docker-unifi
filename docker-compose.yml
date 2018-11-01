@@ -7,11 +7,11 @@ services:
     restart: always
     volumes:
       - "/etc/localtime:/etc/localtime"
-      - "/your/app/folder/unifi:/unifi"
-      - "/your/app/folder/var/lib/unifi:/var/lib/unifi"
-      - "/your/app/folder/var/log/unifi:/var/log/unifi"
-      - "/your/app/folder/var/run/unifi:/var/run/unifi"
-      - "/your/app/folder/usr/lib/unifi/work:/usr/lib/unifi/work"
+      - "/your/host/folder/unifi:/unifi"
+      - "/your/host/folder/var/lib/unifi:/var/lib/unifi"
+      - "/your/host/folder/var/log/unifi:/var/log/unifi"
+      - "/your/host/folder/var/run/unifi:/var/run/unifi"
+      - "/your/host/folder/usr/lib/unifi/work:/usr/lib/unifi/work"
     ports:
       - "8843:8843"
       - "8080:8080"
